@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Train Seat Reservation</title>
+</head>
+<body>
+    <h1>Train Seat Reservation System</h1>
+    <form method="POST" action="/book">
+        <label for="num_seats">Number of Seats:</label>
+        <input type="number" id="num_seats" name="num_seats" min="1" max="7" required>
+        <button type="submit">Book Seats</button>
+    </form>
+    <h2>Seating Layout</h2>
+    <table border="1">
+        {% for row in seats %}
+        <tr>
+            {% for seat in row %}
+            <td>{{ "O" if seat == 0 else "X" }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table><a href=""></a>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
